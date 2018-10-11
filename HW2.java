@@ -26,8 +26,8 @@ public class HW2 {
 	}
 	/**
 	 * This method is used for checking your result, not a part of your HW2
-	 * @param allCards 所有的牌
-	 * @param nDeck 總共有幾副牌
+	 * @param allCards �������
+	 * @param nDeck 蝮賢��嗾����
 	 * @return
 	 */
 	private static boolean isAllCardsCorrect(ArrayList<Card> allCards,int nDeck){
@@ -71,6 +71,19 @@ class Deck{
 	//TODO: Please implement the constructor (30 points)
 	public Deck(int nDeck){
 		cards=new ArrayList<Card>();
+		
+		for(int i=0;i<nDeck;i++)
+		{
+			for(int k=1;k<=4;k++)
+			{
+				for(int z=1;z<=13;z++)
+				{
+					Card c1=new Card(k,z);
+					cards.add(c1);
+				}
+			}
+		}
+		
 		//1 Deck have 52 cards, https://en.wikipedia.org/wiki/Poker
 		//Hint: Use new Card(x,y) and 3 for loops to add card into deck
 		//Sample code start
@@ -81,6 +94,13 @@ class Deck{
 	}	
 	//TODO: Please implement the method to print all cards on screen (10 points)
 	public void printDeck(){
+		
+		for(int i=0;i<cards.size();i++){
+			Card c1=cards.get(i);
+			c1.printCard();
+		}
+		
+		
 		//Hint: print all items in ArrayList<Card> cards, 
 		//TODO: please implement and reuse printCard method in Card class (5 points)
 
@@ -105,6 +125,8 @@ class Card{
 	}	
 	//TODO: 1. Please implement the printCard method (20 points, 10 for suit, 10 for rank)
 	public void printCard(){
+		
+		System.out.println(getSuit()+","+getRank());
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace
 
 	}
